@@ -89,7 +89,7 @@ if selected_gun != -1{
 if selected_gun != -1{
 	var recoil_recovery_factor = global.guns[|selected_gun].recoil_recovery_factor
 	
-	current_recoil += recoil_recovery_factor*(0-current_recoil)
+	current_recoil += recoil_recovery_factor*(global.guns[|selected_gun].recoil_min-current_recoil)
 }
 
 #endregion

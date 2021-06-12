@@ -18,6 +18,7 @@ enum stat{
 	max_ammo, // Ammount of ammo before reload is necessary
 	reload_spd_factor, // How quickly this gun reloads. 1 is instant, 0 is never
 	recoil, // How many degrees of inaccracy this gun has after each shot
+	recoil_min, // Min degrees of inaccuracy
 	recoil_max, // Max degrees of inaccuracy
 	recoil_recovery_factor, // Speed factor for recovering from recoil. 1 is instant, 0 is never
 	bullet_obj, // Which bullet object is used
@@ -37,6 +38,7 @@ function gun(_stat_array) constructor{
 	max_ammo = _stat_array[stat.max_ammo]
 	reload_spd_factor = _stat_array[stat.reload_spd_factor]
 	recoil = _stat_array[stat.recoil]
+	recoil_min = _stat_array[stat.recoil_min]
 	recoil_max = _stat_array[stat.recoil_max]
 	recoil_recovery_factor = _stat_array[stat.recoil_recovery_factor]
 	bullet_obj = _stat_array[stat.bullet_obj]
@@ -76,13 +78,14 @@ stat_array[stat.kickback] = 50
 stat_array[stat.end_dis] = 18
 stat_array[stat.shake] = 5
 stat_array[stat.auto] = false
-stat_array[stat.fire_frames] = 45
+stat_array[stat.fire_frames] = 25
 stat_array[stat.knockback] = 5
 stat_array[stat.damage] = 2
-stat_array[stat.max_ammo] = 2
-stat_array[stat.reload_spd_factor] = .1
-stat_array[stat.recoil] = 20
-stat_array[stat.recoil_max] = 40
+stat_array[stat.max_ammo] = 4
+stat_array[stat.reload_spd_factor] = .08
+stat_array[stat.recoil] = 15
+stat_array[stat.recoil_min] = 0
+stat_array[stat.recoil_max] = 30
 stat_array[stat.recoil_recovery_factor] = 0.05
 stat_array[stat.bullet_obj] = obj_bubble
 stat_array[stat.bullet_count] = 1
