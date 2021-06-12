@@ -1,5 +1,9 @@
 /// @description Create or destroy pillar
 
+if point_distance(other.target_x,other.target_y,x,y) > 20{
+	// Not the target
+	exit
+}
 
 instance_destroy(other) // Destroy the particle
 

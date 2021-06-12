@@ -1,4 +1,6 @@
 
+global.master_volume = 1
+global.sound_volume = 1
 
 randomize()
 

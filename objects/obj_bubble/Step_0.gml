@@ -20,6 +20,7 @@ if !scr_move_collide(xspd,yspd,mask_index,par_enemy,true) || place_meeting(x,y,p
 	
 	ds_list_destroy(list)
 	
+	scr_play_sound(snd_pop)
 	instance_create_layer(x,y,layer,obj_pop)
 	instance_destroy()
 }

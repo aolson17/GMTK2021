@@ -301,7 +301,8 @@ if state = states.normal{
 			// Drop gun
 			var drop = instance_create_layer(tail_end_x,tail_end_y,"Instances",obj_gun)
 			drop.gun_index = selected_gun
-			drop.has_ammo = false
+			drop.ammo = current_ammo
+			current_ammo = 0
 			selected_gun = -1
 		}
 	}else{
@@ -312,8 +313,8 @@ if state = states.normal{
 				tail_end_x = pickup.x
 				tail_end_y = pickup.y
 				selected_gun = pickup.gun_index
-				if pickup.has_ammo{
-					current_ammo = global.guns[|selected_gun].max_ammo
+				if pickup.ammo != -1{
+					current_ammo = pickup.ammo
 				}else{
 					current_ammo = 0
 				}
