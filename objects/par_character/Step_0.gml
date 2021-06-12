@@ -10,7 +10,7 @@ if state = states.knockback{
 		
 	knockback_spd *= .8
 		
-	if !scr_move_collide(xspd,yspd,move_mask,par_solid,false) || knockback_spd < .2{
+	if !scr_move_collide(xspd,yspd,move_mask,wall_obj,false) || knockback_spd < .2{
 		state = states.normal
 	}
 }
@@ -32,7 +32,7 @@ if can_move{
 			image_xscale = sign(target_x-x)
 		}
 		
-		move_success = scr_move_collide(xspd,yspd,move_mask,par_solid,false)
+		move_success = scr_move_collide(xspd,yspd,move_mask,wall_obj,false)
 		if !move_success{
 			moving = false
 		}
@@ -49,7 +49,7 @@ if can_move{
 				image_xscale = sign(target_x-x)
 			}
 	
-			move_success = scr_move_collide(xspd,yspd,move_mask,par_solid,false)
+			move_success = scr_move_collide(xspd,yspd,move_mask,wall_obj,false)
 			if !move_success{
 				moving = false
 			}

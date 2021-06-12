@@ -1,13 +1,13 @@
 {
-  "spriteId": {
-    "name": "spr_space",
-    "path": "sprites/spr_space/spr_space.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "par_character",
+    "path": "objects/par_character/par_character.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -24,11 +24,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Characters",
+    "path": "folders/Objects/Characters.yy",
   },
   "resourceVersion": "1.0",
-  "name": "par_solid",
+  "name": "par_enemy",
   "tags": [],
   "resourceType": "GMObject",
 }

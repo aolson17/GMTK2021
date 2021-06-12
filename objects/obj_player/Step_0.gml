@@ -61,6 +61,14 @@ if state = states.knockback{
 if selected_gun != -1{
 	if state = states.normal{
 		if reload && gun_frame = 0{ // If the player hit the reload button and there is no muzzle flash
+			
+			with(obj_spawner){ // Spawn enemies
+				var part = instance_create_layer(obj_player.tail_end_x,obj_player.tail_end_y,"Bullets",obj_particle)
+				part.target_x = x
+				part.target_y = y-8
+				part.sprite_index = spr_particle2
+			}
+			
 			state = states.reload
 			// To reload the gun spins around, starting at 0 and then has to lerp to 360
 			reload_angle_offset = 0
@@ -103,6 +111,13 @@ if state = states.normal{
 			// TODO add sparks and a sound
 		}else{ // Has a bullet to fire
 			if gun_ready && (shoot || (global.guns[|selected_gun].auto && shoot_hold)){
+				
+				with(obj_pillar_place){ // Toggle pillars
+					var part = instance_create_layer(obj_player.tail_end_x,obj_player.tail_end_y,"Bullets",obj_particle)
+					part.target_x = x
+					part.target_y = y-16
+				}
+				
 				current_ammo--
 				show_debug_message(current_ammo)
 				current_recoil += global.guns[|selected_gun].recoil
@@ -123,6 +138,7 @@ if state = states.normal{
 				repeat(global.guns[|selected_gun].bullet_count){
 					var bullet = instance_create_layer(bullet_x,bullet_y, "Bullets", global.guns[|selected_gun].bullet_obj)
 					bullet.dir = gun_dir_recoil
+					bullet.gun_index = selected_gun
 				}
 			}
 		}
@@ -196,7 +212,7 @@ if state != states.grapple && state != states.grapple_shoot{
 	
 }
 
-if aim_hold{
+if aim_hold && state = states.normal{
 	aim_dir = point_direction(x,y+tail_offset_y,mouse_x,mouse_y)
 	tail_end_target_x = x+lengthdir_x(tail_length_min,aim_dir)
 	tail_end_target_y = y+tail_offset_y+lengthdir_y(tail_length_min,aim_dir)
@@ -219,7 +235,7 @@ if state = states.grapple_shoot{
 		tail_end_target_y += lengthdir_y(grapple_spd,grapple_dir)
 		
 		var collision = collision_line(tail_end_x,tail_end_y,tail_end_target_x,tail_end_target_y,par_wall,true,true)
-		var collision2 = collision_line(tail_end_x,tail_end_y,tail_end_target_x,tail_end_target_y,obj_gun,true,true)
+		//var collision2 = collision_line(tail_end_x,tail_end_y,tail_end_target_x,tail_end_target_y,obj_gun,true,true)
 		
 		tail_end_x = tail_end_target_x
 		tail_end_y = tail_end_target_y
@@ -229,14 +245,14 @@ if state = states.grapple_shoot{
 			state = states.grapple
 			grapple_dis = point_distance(tail_end_x,tail_end_y,x,y)
 			prev_grapple_dis = grapple_dis
-		}else if collision2 != noone{
+		}/*else if collision2 != noone{
 			// Check for pickup
 			tail_end_x = collision2.x
 			tail_end_y = collision2.y
 			selected_gun = collision2.gun_index
 			instance_destroy(collision2)
 			state = states.normal
-		}
+		}*/
 		
 	}else{
 		state = states.normal

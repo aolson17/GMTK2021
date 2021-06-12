@@ -6,7 +6,7 @@ move_spd = 1 // Set in child
 move_mask = -1 // Set in child
 hit_mask = -1 // Set in child
 
-
+wall_obj = par_solid
 
 knockback_spd = 0 // When knocked back, this is set
 knockback_dir = 0

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_space",
-    "path": "sprites/spr_space/spr_space.yy",
+    "name": "spr_pillar",
+    "path": "sprites/spr_pillar/spr_pillar.yy",
   },
   "solid": false,
   "visible": true,
@@ -20,7 +20,11 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_particle","path":"objects/obj_particle/obj_particle.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":2,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
@@ -28,7 +32,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "par_solid",
+  "name": "obj_pillar_place",
   "tags": [],
   "resourceType": "GMObject",
 }

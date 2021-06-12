@@ -1,7 +1,7 @@
 
 
 
-
+gun_index = -1 // Set on creation
 
 spd = 3.5
 
