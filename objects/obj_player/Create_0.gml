@@ -44,10 +44,12 @@ gun_pos_y = y
 moving = false
 
 gun_dir = 0
+gun_dir_adj = 0
+gun_xscale = 1
 mouse_dir = 0
 
 
-selected_gun = 0 // Index in global.guns of the gun the player is holding. -1 means no gun
+selected_gun = -1 // Index in global.guns of the gun the player is holding. -1 means no gun
 
 move_dir = 0 // Direction player last walked
 
