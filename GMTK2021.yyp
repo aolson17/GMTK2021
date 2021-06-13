@@ -3,6 +3,7 @@
     {"id":{"name":"spr_ballue_body_flat","path":"sprites/spr_ballue_body_flat/spr_ballue_body_flat.yy",},"order":0,},
     {"id":{"name":"str_effect","path":"scripts/str_effect/str_effect.yy",},"order":11,},
     {"id":{"name":"spr_gun_bubble2","path":"sprites/spr_gun_bubble2/spr_gun_bubble2.yy",},"order":0,},
+    {"id":{"name":"obj_button_music","path":"objects/obj_button_music/obj_button_music.yy",},"order":12,},
     {"id":{"name":"obj_particle","path":"objects/obj_particle/obj_particle.yy",},"order":11,},
     {"id":{"name":"spr_firework","path":"sprites/spr_firework/spr_firework.yy",},"order":4,},
     {"id":{"name":"str_gun","path":"scripts/str_gun/str_gun.yy",},"order":0,},
