@@ -61,8 +61,6 @@ ini_write_real("Data", "level_5_time", global.level_5_time)
 
 ini_close()
 
-show_message(next_room)
-
 var transition = instance_create_layer(x,y,"Cursor",obj_transition)
 transition.room_target = next_room
 

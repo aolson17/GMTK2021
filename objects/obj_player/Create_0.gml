@@ -1,6 +1,4 @@
 
-show_message(room_get_name(room))
-
 event_inherited()
 
 #region Player Stats
