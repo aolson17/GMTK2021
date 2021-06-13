@@ -23,7 +23,7 @@ if state != states.grapple && state != states.grapple_shoot && state != states.k
 	can_move = false
 }
 
-sprite_index = spr_player
+
 	
 if moving{
 	if abs(angle_difference(move_dir,90)) < 45{
@@ -54,6 +54,10 @@ if aim_hold{
 	
 if state = states.knockback{
 	sprite_index = spr_player_hurt
+}else{
+	if prev_state = states.knockback{
+		sprite_index = spr_player
+	}
 }
 	
 #endregion
@@ -115,9 +119,11 @@ if state = states.normal{
 			if gun_ready && (shoot || (global.guns[|selected_gun].auto && shoot_hold)){
 				
 				with(obj_pillar_place){ // Toggle pillars
-					var part = instance_create_layer(obj_player.tail_end_x,obj_player.tail_end_y,"Bullets",obj_particle)
-					part.target_x = x
-					part.target_y = y-16
+					if obj_player.selected_gun = gun_index || gun_index = -1{
+						var part = instance_create_layer(obj_player.tail_end_x,obj_player.tail_end_y,"Bullets",obj_particle)
+						part.target_x = x
+						part.target_y = y-16
+					}
 				}
 				
 				current_ammo--
@@ -138,6 +144,7 @@ if state = states.normal{
 				
 				// Create the bullet
 				repeat(global.guns[|selected_gun].bullet_count){
+					var gun_dir_recoil = gun_dir + choose(-1,1)*random(current_recoil)
 					var bullet = instance_create_layer(bullet_x,bullet_y, "Bullets", global.guns[|selected_gun].bullet_obj)
 					bullet.dir = gun_dir_recoil
 					bullet.gun_index = selected_gun
@@ -171,7 +178,7 @@ if selected_gun != -1{
 
 	gun_dir = point_direction(gun_pos_x,gun_pos_y,mouse_x,mouse_y)
 	
-	gun_dir_recoil = gun_dir + choose(-1,1)*random(current_recoil)
+	//gun_dir_recoil = gun_dir + choose(-1,1)*random(current_recoil)
 
 	if abs(angle_difference(aim_dir,0)) < 90{
 		gun_xscale = 1

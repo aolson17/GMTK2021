@@ -72,13 +72,13 @@ function scr_find_gun(_name){
 
 var stat_array
 
-stat_array[stat.name] = "Bubble"
+stat_array[stat.name] = "Bubble Blaster"
 stat_array[stat.spr] = spr_gun_bubble
 stat_array[stat.kickback] = 50
-stat_array[stat.end_dis] = 18
+stat_array[stat.end_dis] = 12
 stat_array[stat.shake] = 3
 stat_array[stat.auto] = false
-stat_array[stat.fire_frames] = 25
+stat_array[stat.fire_frames] = 18
 stat_array[stat.knockback] = 5
 stat_array[stat.damage] = 6
 stat_array[stat.max_ammo] = 4
@@ -89,6 +89,26 @@ stat_array[stat.recoil_max] = 30
 stat_array[stat.recoil_recovery_factor] = 0.05
 stat_array[stat.bullet_obj] = obj_bubble
 stat_array[stat.bullet_count] = 1
+
+ds_list_add(global.guns,new gun(stat_array))
+
+stat_array[stat.name] = "Confetti Popper"
+stat_array[stat.spr] = spr_gun_confetti
+stat_array[stat.kickback] = 70
+stat_array[stat.end_dis] = 18
+stat_array[stat.shake] = 5
+stat_array[stat.auto] = false
+stat_array[stat.fire_frames] = 30
+stat_array[stat.knockback] = 8
+stat_array[stat.damage] = 5
+stat_array[stat.max_ammo] = 2
+stat_array[stat.reload_spd_factor] = .08
+stat_array[stat.recoil] = 15
+stat_array[stat.recoil_min] = 30
+stat_array[stat.recoil_max] = 60
+stat_array[stat.recoil_recovery_factor] = 0.05
+stat_array[stat.bullet_obj] = obj_bullet_confetti
+stat_array[stat.bullet_count] = 15
 
 ds_list_add(global.guns,new gun(stat_array))
 

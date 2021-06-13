@@ -11,7 +11,7 @@ if !scr_move_collide(xspd,yspd,mask_index,par_enemy,true) || place_meeting(x,y,p
 	
 	var list = ds_list_create()
 	
-	collision_circle_list(x,y,16,par_enemy,true,true,list,false)
+	collision_circle_list(x,y,aoe_range,par_enemy,true,true,list,false)
 	
 	for(var i = 0; i < ds_list_size(list); i++){
 		scr_knockback_target(list[|i], global.guns[|gun_index].knockback, dir)
@@ -20,8 +20,9 @@ if !scr_move_collide(xspd,yspd,mask_index,par_enemy,true) || place_meeting(x,y,p
 	
 	ds_list_destroy(list)
 	
-	scr_play_sound(snd_pop)
-	instance_create_layer(x,y,layer,obj_pop)
+	if end_obj != noone{
+		instance_create_layer(x,y,layer,end_obj)
+	}
 	instance_destroy()
 }
 

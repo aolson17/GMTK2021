@@ -7,7 +7,9 @@ if state = states.normal && aim_hold {
 if selected_gun != -1{
 	for(var i = 0; i < instance_number(obj_pillar_place); i++){
 		var target = instance_find(obj_pillar_place,i)
-		scr_draw_dotted_line(tail_end_x,tail_end_y,target.x,target.y-16,c_white,.2)
+		if selected_gun = target.gun_index || target.gun_index = -1{
+			scr_draw_dotted_line(tail_end_x,tail_end_y,target.x,target.y-16,c_white,.2)
+		}
 	}
 	for(var i = 0; i < instance_number(obj_spawner); i++){
 		var target = instance_find(obj_spawner,i)

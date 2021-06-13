@@ -18,7 +18,9 @@ var dis = point_distance(gun_gui_x,gun_gui_y,device_mouse_x_to_gui(0),device_mou
 
 var perp_dis = 2*tan(((obj_player.current_recoil)/2)*.0175)*dis
 
-draw_circle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),perp_dis,true)
+if obj_player.selected_gun != -1{
+	draw_circle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),perp_dis,true)
+}
 
 var o_s = 1/scope_surf_scale // Offset scale
 var offset_x = -.5*o_s // How many pixels to offset sprites by to center them over the cursor
