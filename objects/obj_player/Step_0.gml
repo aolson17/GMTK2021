@@ -1,4 +1,19 @@
 
+
+if hp < 0 && !died{
+	died = true
+	
+	repeat(4){
+		var chunk_spr = choose(spr_ballue_body_1)
+		ds_list_add(obj_effects.bouncy_effects,new bouncy_effect(chunk_spr,x,y-12,y,irandom(360), 2))
+	}
+	
+	instance_create_layer(x,y,"Control",obj_part_eyes)
+	
+	alarm[3] = 120
+	exit
+}
+
 event_inherited()
 message = ""
 
@@ -74,6 +89,8 @@ if selected_gun != -1{
 				part.target_y = y-8
 				part.sprite_index = spr_particle2
 			}
+			
+			scr_play_sound(snd_reload,true)
 			
 			state = states.reload
 			// To reload the gun spins around, starting at 0 and then has to lerp to 360
@@ -292,6 +309,8 @@ if state = states.grapple_shoot{
 
 if state = states.grapple{
 	// Move toward wall
+	target_x = x
+	target_y = y
 	
 	if snd_extend != -1 && audio_is_playing(snd_extend){
 		audio_sound_gain(snd_extend, 0, 300)

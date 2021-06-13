@@ -1,4 +1,7 @@
 
+if hp < 0{
+	exit
+}
 
 if state = states.normal && aim_hold {
 	scr_draw_dotted_line(tail_end_x,tail_end_y,mouse_x,mouse_y,c_white,.9)

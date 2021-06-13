@@ -3,7 +3,7 @@
 event_inherited();
 
 
-if attack_cooldown_frames = 0{
+if attack_cooldown_frames = 0 && !obj_player.died{
 	target_x = obj_player.x
 	target_y = obj_player.y
 	obj_player.mask_index = obj_player.hit_mask
@@ -28,6 +28,9 @@ if attack_cooldown_frames = 0{
 if hp <= 0{
 	scr_play_sound(snd_destroyed, false)
 	instance_destroy()
+	
+	ds_list_add(obj_effects.bouncy_effects,new bouncy_effect(spr_robot_shard_1,x,y-8,y,45, 1.5))
+	ds_list_add(obj_effects.bouncy_effects,new bouncy_effect(spr_robot_shard_2,x,y-8,y,135, 1.5))
 }
 
 

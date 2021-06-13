@@ -105,10 +105,30 @@ stat_array[stat.max_ammo] = 2
 stat_array[stat.reload_spd_factor] = .08
 stat_array[stat.recoil] = 15
 stat_array[stat.recoil_min] = 30
-stat_array[stat.recoil_max] = 60
+stat_array[stat.recoil_max] = 40
 stat_array[stat.recoil_recovery_factor] = 0.05
 stat_array[stat.bullet_obj] = obj_bullet_confetti
 stat_array[stat.bullet_count] = 15
+
+ds_list_add(global.guns,new gun(stat_array))
+
+stat_array[stat.name] = "Firework Launcher"
+stat_array[stat.spr] = spr_gun_firework
+stat_array[stat.kickback] = 70
+stat_array[stat.end_dis] = 22
+stat_array[stat.shake] = 6
+stat_array[stat.auto] = false
+stat_array[stat.fire_frames] = 40
+stat_array[stat.knockback] = 8
+stat_array[stat.damage] = 20
+stat_array[stat.max_ammo] = 1
+stat_array[stat.reload_spd_factor] = .08
+stat_array[stat.recoil] = 15
+stat_array[stat.recoil_min] = 0
+stat_array[stat.recoil_max] = 20
+stat_array[stat.recoil_recovery_factor] = 0.05
+stat_array[stat.bullet_obj] = obj_bullet_rocket
+stat_array[stat.bullet_count] = 1
 
 ds_list_add(global.guns,new gun(stat_array))
 

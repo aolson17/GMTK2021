@@ -10,7 +10,7 @@ knockback = 8
 
 wall_obj = par_solid
 
-max_hp = 10
+max_hp = 15
 hp = max_hp
 
 move_mask = spr_robot_down

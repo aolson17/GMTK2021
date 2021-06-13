@@ -3,7 +3,7 @@
 event_inherited();
 
 
-if attack_cooldown_frames = 0{
+if attack_cooldown_frames = 0 && !obj_player.died{
 	target_x = obj_player.x
 	target_y = obj_player.y
 	obj_player.mask_index = obj_player.hit_mask

@@ -76,3 +76,5 @@ message = "" // A line of text above the player
 
 snd_extend = -1 // The sound id for the extending tail
 snd_retract = -1 // The sound id for the retracting tail
+
+died = false
