@@ -6,7 +6,6 @@ var next_room = rm_menu
 
 
 if room = rm_0{
-	show_message(room)
 		next_room = rm_1
 }else if room = rm_1{
 		if global.levels_complete < 1{
