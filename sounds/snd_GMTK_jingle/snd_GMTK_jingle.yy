@@ -1,6 +1,6 @@
 {
   "compression": 0,
-  "volume": 0.5,
+  "volume": 1.0,
   "preload": false,
   "bitRate": 128,
   "sampleRate": 44100,
@@ -10,8 +10,8 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_GMTK_jingle",
-  "duration": 2.405,
+  "soundFile": "snd_GMTK_jingle.ogg",
+  "duration": 4.805,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
