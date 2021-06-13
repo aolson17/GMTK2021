@@ -33,6 +33,7 @@
     {"id":{"name":"snd_bubble","path":"sounds/snd_bubble/snd_bubble.yy",},"order":3,},
     {"id":{"name":"spr_cursor","path":"sprites/spr_cursor/spr_cursor.yy",},"order":14,},
     {"id":{"name":"spr_robot_hurt","path":"sprites/spr_robot_hurt/spr_robot_hurt.yy",},"order":1,},
+    {"id":{"name":"msc_main","path":"sounds/msc_main/msc_main.yy",},"order":17,},
     {"id":{"name":"spr_robot_shard_2","path":"sprites/spr_robot_shard_2/spr_robot_shard_2.yy",},"order":5,},
     {"id":{"name":"spr_player_up","path":"sprites/spr_player_up/spr_player_up.yy",},"order":5,},
     {"id":{"name":"obj_control","path":"objects/obj_control/obj_control.yy",},"order":1,},
