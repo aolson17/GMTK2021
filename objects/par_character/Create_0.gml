@@ -41,3 +41,5 @@ enum states{
 
 state = states.normal
 prev_state = state
+
+dir = 0

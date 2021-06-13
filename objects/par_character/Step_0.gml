@@ -13,6 +13,13 @@ if state = states.knockback{
 	if !scr_move_collide(xspd,yspd,move_mask,wall_obj,false) || knockback_spd < .2{
 		state = states.normal
 	}
+	
+	target_x = x
+	target_y = y
+	
+	can_move = false
+}else{
+	can_move = true
 }
 
 #region Movement

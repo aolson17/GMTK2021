@@ -19,6 +19,6 @@ with(par_enemy){
 if spawned_enemies < 2{
 	scr_play_sound(snd_spawn, true)
 
-	var enemy = instance_create_layer(x,y+10,"Instances",obj_ufo)
+	var enemy = instance_create_layer(x,y+10,"Instances",spawned_enemy) // spawned_enemy set in variable definitions
 	enemy.spawner = id
 }

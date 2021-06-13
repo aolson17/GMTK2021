@@ -17,15 +17,39 @@ if attack_cooldown_frames = 0{
 	}
 }else{
 	attack_cooldown_frames--
-	target_x = x-(x-obj_player.x)
-	target_y = x-(y-obj_player.y)
+	var player_dir = point_direction(x,y,obj_player.x,obj_player.y)
+	var dis = 50
+	target_x = obj_player.x-lengthdir_x(dis,player_dir)
+	target_y = obj_player.y-lengthdir_y(dis,player_dir)
+	dir = player_dir // Face the player
 }
 
 
 if hp <= 0{
-	scr_play_sound(snd_destroyed)
+	scr_play_sound(snd_destroyed, false)
 	instance_destroy()
+	
+	ds_list_add(obj_effects.bouncy_effects,new bouncy_effect(spr_alien_shard_1,x,y-16,y,45, 1.5))
+	ds_list_add(obj_effects.bouncy_effects,new bouncy_effect(spr_alien_shard_2,x,y-16,y,135, 1.5))
+	
+	ds_list_add(obj_effects.bouncy_effects,new bouncy_effect(spr_alien,x,y-16,y,irandom(360), 1))
 }
 
 
+if moving{
+	if abs(angle_difference(dir,90)) < 45{
+		sprite_index = spr_alien_up
+	}else if abs(angle_difference(dir,270)) < 45{
+		sprite_index = spr_alien_down
+	}else if abs(angle_difference(dir,0)) < 45{
+		sprite_index = spr_alien_right
+	}else{
+		sprite_index = spr_alien_left
+	}
+}
 
+if state = states.knockback{
+	sprite_index = spr_alien_hurt
+}
+
+image_xscale = 1

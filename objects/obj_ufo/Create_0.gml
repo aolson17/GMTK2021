@@ -13,8 +13,8 @@ wall_obj = par_wall
 max_hp = 10
 hp = max_hp
 
-move_mask = spr_saucer
-hit_mask = spr_saucer_hurt
+move_mask = spr_alien_down
+hit_mask = spr_alien_hurt
 
 
 

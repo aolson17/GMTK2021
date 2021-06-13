@@ -5,7 +5,7 @@ event_inherited()
 
 move_spd = 2
 
-hp_max = 100
+hp_max = 15
 
 move_mask = spr_player // Mask for movement
 hit_mask = spr_player_hurt // Mask for bullet collisions
