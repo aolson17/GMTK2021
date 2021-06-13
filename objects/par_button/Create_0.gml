@@ -5,6 +5,8 @@ toggleable = false
 
 text = "test"
 
+enabled = true
+
 button_w_override = -1 // For overriding automatic sizing
 button_h_override = -1
 

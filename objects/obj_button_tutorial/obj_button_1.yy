@@ -1,10 +1,16 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_button",
+    "path": "sprites/spr_button/spr_button.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
-  "persistent": true,
-  "parentObjectId": null,
+  "persistent": false,
+  "parentObjectId": {
+    "name": "par_button",
+    "path": "objects/par_button/par_button.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -19,17 +25,15 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":5,"eventType":7,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":3,"eventType":7,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Control",
-    "path": "folders/Objects/Control.yy",
+    "name": "Menu Buttons",
+    "path": "folders/Objects/Menu Buttons.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_menu_control",
+  "name": "obj_button_1",
   "tags": [],
   "resourceType": "GMObject",
 }

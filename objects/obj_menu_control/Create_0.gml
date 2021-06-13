@@ -4,15 +4,21 @@ if instance_number(obj_menu_control) > 1{
 	exit
 }
 
+
+ini_open("data.ini")
+
+global.sound_volume = ini_read_real("Data","sound_volume",1)
+global.music_volume = ini_read_real("Data","music_volume",1)
+global.levels_complete = ini_read_real("Data","levels_complete",0)
+
+ini_close()
+
 global.master_volume = 1
-global.sound_volume = 1
-global.music_volume = 1
 
 
-global.levels_complete = 0
 
 
-draw_set_circle_precision(32)
+draw_set_circle_precision(64)
 
 
 randomize()
