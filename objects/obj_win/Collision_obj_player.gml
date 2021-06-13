@@ -4,10 +4,11 @@
 
 var next_room = rm_menu
 
-switch(room){
-	case rm_0:
+
+if room = rm_0{
+	show_message(room)
 		next_room = rm_1
-	case rm_1:
+}else if room = rm_1{
 		if global.levels_complete < 1{
 			global.levels_complete = 1
 		}
@@ -15,7 +16,7 @@ switch(room){
 			global.level_1_time = obj_control.timer
 		}
 		next_room = rm_2
-	case rm_2:
+}else if room = rm_2{
 		if global.levels_complete < 2{
 			global.levels_complete = 2
 		}
@@ -23,7 +24,7 @@ switch(room){
 			global.level_2_time = obj_control.timer
 		}
 		next_room = rm_3
-	case rm_3:
+}else if room = rm_3{
 		if global.levels_complete < 3{
 			global.levels_complete = 3
 		}
@@ -31,7 +32,7 @@ switch(room){
 			global.level_3_time = obj_control.timer
 		}
 		next_room = rm_4
-	case rm_4:
+}else if room = rm_4{
 		if global.levels_complete < 4{
 			global.levels_complete = 4
 		}
@@ -39,12 +40,12 @@ switch(room){
 			global.level_4_time = obj_control.timer
 		}
 		next_room = rm_5
-	case rm_5:
+}else if room = rm_5{
 		if global.levels_complete < 5{
 			global.levels_complete = 5
 		}
 		if obj_control.timer < global.level_5_time || global.level_5_time = -1{
-			global.level_2_time = obj_control.timer
+			global.level_5_time = obj_control.timer
 		}
 }
 
@@ -60,6 +61,7 @@ ini_write_real("Data", "level_5_time", global.level_5_time)
 
 ini_close()
 
+show_message(next_room)
 
 var transition = instance_create_layer(x,y,"Cursor",obj_transition)
 transition.room_target = next_room
