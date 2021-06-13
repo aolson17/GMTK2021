@@ -25,6 +25,9 @@ grapple_spd = 9
 
 interact_dis = 40
 
+invincible = false
+invincible_frames = 10
+
 #endregion
 
 tail_offset_adj_x = tail_offset_x // Have the x offset move smoothly when changing image_xscale

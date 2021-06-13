@@ -53,7 +53,7 @@ if aim_hold{
 
 	
 if state = states.knockback{
-	sprite_index = spr_player_hurt
+	sprite_index = spr_ballue_hurt
 }else{
 	if prev_state = states.knockback{
 		sprite_index = spr_player

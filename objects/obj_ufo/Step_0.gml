@@ -8,9 +8,11 @@ if attack_cooldown_frames = 0{
 	target_y = obj_player.y
 	obj_player.mask_index = obj_player.hit_mask
 	mask_index = hit_mask
-	if distance_to_object(obj_player) < 3{
+	if distance_to_object(obj_player) < 3 && !obj_player.invincible{
 		scr_knockback_target(obj_player,knockback,point_direction(x,y,target_x,target_y))
 		obj_player.hp -= damage
+		obj_player.invincible = true
+		obj_player.alarm[2] = obj_player.invincible_frames
 		attack_cooldown_frames = attack_cooldown_frames_max
 	}
 }else{

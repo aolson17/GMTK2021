@@ -6,6 +6,7 @@
     {"id":{"name":"spr_button2","path":"sprites/spr_button2/spr_button2.yy",},"order":0,},
     {"id":{"name":"obj_pillar_place_blue","path":"objects/obj_pillar_place_blue/obj_pillar_place_blue.yy",},"order":15,},
     {"id":{"name":"par_character","path":"objects/par_character/par_character.yy",},"order":0,},
+    {"id":{"name":"spr_ballue_hurt","path":"sprites/spr_ballue_hurt/spr_ballue_hurt.yy",},"order":6,},
     {"id":{"name":"shd_greyscale","path":"shaders/shd_greyscale/shd_greyscale.yy",},"order":0,},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},"order":2,},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"order":0,},

@@ -22,6 +22,9 @@ line_color = make_color_hsv(202,100,71)
 line_color = make_color_rgb(0,149,238)
 line_color_back = make_color_rgb(0,113,180)
 
+/*if invincible{
+	gpu_set_fog(true,c_white,0,0)
+}*/
 
 if y+tail_offset_y < tail_end_y{
 	draw_self()
@@ -44,5 +47,7 @@ if y+tail_offset_y >= tail_end_y{
 }
 
 
-
+/*if invincible{
+	gpu_set_fog(false,c_white,0,0)
+}*/
 
