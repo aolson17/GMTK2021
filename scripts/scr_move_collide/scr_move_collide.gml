@@ -51,6 +51,12 @@ function scr_move_collide(argument0, argument1, argument2, argument3, _strict) {
 	}
 	
 	mask_index = prev_mask
+	
+	if found_wall{
+		if object_index = obj_player{
+			scr_play_sound(snd_collision,false)
+		}
+	}
 
 	if can_move{
 		if _strict && found_wall{

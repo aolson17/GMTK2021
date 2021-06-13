@@ -73,3 +73,6 @@ grapple_dir = 0 // The direction the tail is launched
 prev_grapple_dis = 0 // Used to check if the player is moving past the grapple point
 
 message = "" // A line of text above the player
+
+snd_extend = -1 // The sound id for the extending tail
+snd_retract = -1 // The sound id for the retracting tail

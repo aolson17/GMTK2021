@@ -17,7 +17,9 @@ if obj_player.selected_gun != -1{
 }
 scr_draw_outline(5,9,"HP: "+string(obj_player.hp),c_white,c_black,1)
 
-scr_draw_outline(240,9,"Time: "+string(obj_control.timer),c_white,c_black,1)
+if room != rm_0{
+	scr_draw_outline(240,9,"Time: "+string(obj_control.timer),c_white,c_black,1)
+}
 
 surface_reset_target()
 

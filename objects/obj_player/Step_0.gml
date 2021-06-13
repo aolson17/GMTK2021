@@ -160,6 +160,8 @@ if state = states.normal{
 			state = states.grapple_shoot
 		
 			grapple_dir = mouse_dir
+			
+			snd_extend = scr_play_sound(snd_tail_extend,true)
 		}
 	}
 }
@@ -263,12 +265,14 @@ if state = states.grapple_shoot{
 				state = states.normal
 				x = temp_x
 				y = temp_y
+				snd_retract = scr_play_sound(snd_tail_retract,true)
 			}else{
 				x = temp_x
 				y = temp_y
 				state = states.grapple
 				grapple_dis = point_distance(tail_end_x,tail_end_y,x,y)
 				prev_grapple_dis = grapple_dis
+				snd_retract = scr_play_sound(snd_tail_retract,true)
 			}
 			
 		}/*else if collision2 != noone{
@@ -282,11 +286,16 @@ if state = states.grapple_shoot{
 		
 	}else{
 		state = states.normal
+		snd_retract = scr_play_sound(snd_tail_retract,true)
 	}
 }
 
 if state = states.grapple{
 	// Move toward wall
+	
+	if snd_extend != -1 && audio_is_playing(snd_extend){
+		audio_sound_gain(snd_extend, 0, 300)
+	}
 	
 	moving = false
 	var grapple_xspd = lengthdir_x(grapple_spd,grapple_dir)
@@ -315,6 +324,12 @@ if state = states.grapple{
 	if tail_distance > tail_length_max{
 		state = states.normal
 	}
+	
+	if state = states.normal{
+		if snd_retract != -1 && audio_is_playing(snd_retract){
+			audio_sound_gain(snd_retract, 0, 300)
+		}
+	}
 }
 
 #endregion
@@ -330,6 +345,8 @@ if state = states.normal{
 			drop.ammo = current_ammo
 			current_ammo = 0
 			selected_gun = -1
+			
+			scr_play_sound(snd_weapon_drop,true)
 		}
 	}else{
 		if distance_to_object(obj_gun) < interact_dis{
@@ -345,6 +362,7 @@ if state = states.normal{
 					current_ammo = 0
 				}
 				instance_destroy(pickup)
+				scr_play_sound(snd_weapon_get,true)
 			}
 		}
 	}

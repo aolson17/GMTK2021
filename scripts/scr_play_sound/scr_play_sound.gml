@@ -11,7 +11,7 @@ function scr_play_sound(argument0,allow_overlap) {
 	audio_sound_gain(sound,global.master_volume*global.sound_volume,0)
 
 
-	return sound_
+	return sound
 
 
 }
