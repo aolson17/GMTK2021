@@ -15,7 +15,6 @@ global.level_1_time = ini_read_real("Data","level_1_time",-1)
 global.level_2_time = ini_read_real("Data","level_2_time",-1)
 global.level_3_time = ini_read_real("Data","level_3_time",-1)
 global.level_4_time = ini_read_real("Data","level_4_time",-1)
-global.level_5_time = ini_read_real("Data","level_5_time",-1)
 
 ini_close()
 

@@ -39,13 +39,6 @@ if room = rm_0{
 			global.level_4_time = obj_control.timer
 		}
 		next_room = rm_5
-}else if room = rm_5{
-		if global.levels_complete < 5{
-			global.levels_complete = 5
-		}
-		if obj_control.timer < global.level_5_time || global.level_5_time = -1{
-			global.level_5_time = obj_control.timer
-		}
 }
 
 
@@ -56,7 +49,6 @@ ini_write_real("Data", "level_1_time", global.level_1_time)
 ini_write_real("Data", "level_2_time", global.level_2_time)
 ini_write_real("Data", "level_3_time", global.level_3_time)
 ini_write_real("Data", "level_4_time", global.level_4_time)
-ini_write_real("Data", "level_5_time", global.level_5_time)
 
 ini_close()
 
