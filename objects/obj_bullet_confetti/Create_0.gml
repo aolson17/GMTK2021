@@ -9,7 +9,7 @@ event_inherited();
 
 spd = 2
 
-snd = scr_play_sound(snd_bubble)
+snd = snd_bubble
 
 aoe_range = 3
 

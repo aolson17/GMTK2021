@@ -14,9 +14,9 @@ function scr_knockback_target(_target,_spd,_dir){
 		if obj_player.state = states.reload{ // Finish the reload if it interrupts it
 			obj_player.current_ammo = global.guns[|obj_player.selected_gun].max_ammo
 		}
-		scr_play_sound(snd_hurt)
+		scr_play_sound(snd_hurt, false)
 	}else{
-		scr_play_sound(snd_enemy_hit)
+		scr_play_sound(snd_enemy_hit, false)
 	}
 	
 	if !_target.knockback_immune{

@@ -11,6 +11,12 @@ global.sound_volume = ini_read_real("Data","sound_volume",1)
 global.music_volume = ini_read_real("Data","music_volume",1)
 global.levels_complete = ini_read_real("Data","levels_complete",0)
 
+global.level_1_time = ini_read_real("Data","level_1_time",-1)
+global.level_2_time = ini_read_real("Data","level_2_time",-1)
+global.level_3_time = ini_read_real("Data","level_3_time",-1)
+global.level_4_time = ini_read_real("Data","level_4_time",-1)
+global.level_5_time = ini_read_real("Data","level_5_time",-1)
+
 ini_close()
 
 global.master_volume = 1

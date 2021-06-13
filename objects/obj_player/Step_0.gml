@@ -143,12 +143,15 @@ if state = states.normal{
 				var bullet_y = gun_pos_y+lengthdir_y(global.guns[|selected_gun].end_dis,gun_dir)
 				
 				// Create the bullet
+				var bullet
 				repeat(global.guns[|selected_gun].bullet_count){
 					var gun_dir_recoil = gun_dir + choose(-1,1)*random(current_recoil)
-					var bullet = instance_create_layer(bullet_x,bullet_y, "Bullets", global.guns[|selected_gun].bullet_obj)
+					bullet = instance_create_layer(bullet_x,bullet_y, "Bullets", global.guns[|selected_gun].bullet_obj)
 					bullet.dir = gun_dir_recoil
 					bullet.gun_index = selected_gun
 				}
+				
+				scr_play_sound(bullet.snd,true)
 			}
 		}
 	}else{

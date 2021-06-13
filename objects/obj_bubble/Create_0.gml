@@ -3,7 +3,7 @@
 
 spd = 3.5
 
-snd = scr_play_sound(snd_bubble)
+snd = snd_bubble
 
 aoe_range = 18
 
