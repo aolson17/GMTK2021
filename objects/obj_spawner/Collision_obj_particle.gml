@@ -1,5 +1,6 @@
 /// @description Create enemy
 
+
 if point_distance(other.target_x,other.target_y,x,y) > 20{
 	// Not the target
 	exit

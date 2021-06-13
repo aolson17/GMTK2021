@@ -22,7 +22,7 @@ zoom_height = height * zoom
 if shake > 0{
 	shake_offset_x = choose(-1,1)*((irandom(shake)+1))
 	shake_offset_y = choose(-1,1)*((irandom(shake)+1))
-	shake_offset_r = choose(-1,1)
+	shake_offset_r = 0//choose(-1,1)
 	shake--
 }else{
 	shake_offset_x = 0

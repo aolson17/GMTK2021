@@ -38,7 +38,7 @@ if can_move{
 		}
 	}else{
 		// Move the rest of the way if there is anything considerable to move
-		if point_distance(x,y,target_x,target_y) > .1{
+		//if point_distance(x,y,target_x,target_y) > .1{
 			moving = true
 			dir = point_direction(x,y,target_x,target_y)
 			xspd = lengthdir_x(point_distance(x,y,target_x,target_y),dir)
@@ -53,7 +53,7 @@ if can_move{
 			if !move_success{
 				moving = false
 			}
-		}
+		//}
 	}
 }
 

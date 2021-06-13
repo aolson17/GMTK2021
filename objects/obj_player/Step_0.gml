@@ -22,6 +22,8 @@ if state != states.grapple && state != states.grapple_shoot{
 }else{
 	can_move = false
 }
+
+sprite_index = spr_player
 	
 if moving{
 	if abs(angle_difference(move_dir,90)) < 45{
@@ -242,9 +244,23 @@ if state = states.grapple_shoot{
 		
 		if collision != noone{
 			// Hit wall
-			state = states.grapple
-			grapple_dis = point_distance(tail_end_x,tail_end_y,x,y)
-			prev_grapple_dis = grapple_dis
+			
+			var temp_x = x
+			var temp_y = y
+			x = tail_end_x
+			y = tail_end_y
+			if distance_to_object(obj_space) < 18{
+				state = states.normal
+				x = temp_x
+				y = temp_y
+			}else{
+				x = temp_x
+				y = temp_y
+				state = states.grapple
+				grapple_dis = point_distance(tail_end_x,tail_end_y,x,y)
+				prev_grapple_dis = grapple_dis
+			}
+			
 		}/*else if collision2 != noone{
 			// Check for pickup
 			tail_end_x = collision2.x

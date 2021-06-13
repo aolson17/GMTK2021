@@ -26,3 +26,9 @@ shake = 0
 camera = camera_create_view(x,y,width,height)
 
 view_set_camera(0,camera)
+
+
+surf_w = 384
+surf_h = 216
+
+ui_surf = -1
