@@ -8,7 +8,7 @@ mouse_dir = point_direction(x,y,mouse_x,mouse_y)
 
 #region Movement
 
-if state != states.grapple && state != states.grapple_shoot{
+if state != states.grapple && state != states.grapple_shoot && state != states.knockback{
 	can_move = true
 	move_x = keyboard_check(ord("D"))-keyboard_check(ord("A"))
 	move_y = keyboard_check(ord("S"))-keyboard_check(ord("W"))
